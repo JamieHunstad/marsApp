@@ -1,1 +1,48 @@
-/* You can add global styles to this file, and also import other style files */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: "DINCondensed-Bold";
+    src: url("assets/font/DINCondensed-Bold.woff")
+        format("woff");
+}
+:root{
+    --mainFont: "DINCondensed-Bold";
+}
+
+body{
+    background-color: #040204;
+}
+
+h1, h2, h3, p{
+    color: white;
+    font-family: var(--mainFont);
+}
+h1{
+    font-size: 2em;
+}
+h3{
+    font-size: .8em;
+}
+p{
+    font-size: 1em;
+}
+.btn-forecast{
+    font-family: var(--mainFont);
+    font-size: .8em;
+    letter-spacing: 0.3em;
+    color: #f18155;
+    background-color: #040204;
+    border: solid 1px #f18155;
+    padding: 15px 20px;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.btn-forecast:hover{
+    color: #ff956b;
+    font-size: .75em;
+}

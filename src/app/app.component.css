@@ -1,0 +1,49 @@
+
+.container-root{
+    width: 100%;
+    padding:20px;
+}
+.nasa_logo {
+    width: 35px;
+    margin: auto;
+    display: block;
+    opacity: 40%;
+}
+
+.container-main{
+    margin: 20px;
+    border: solid 1px #f18155;;
+    border-radius: 15px;
+    padding: 20px;
+    height:100%;
+}
+.main-title{
+    text-align: center;
+}
+.main-subhead{
+    letter-spacing: 0.3em;
+    opacity: 60%;
+    text-align: center;
+}
+.planet_img{
+    width:200px;
+    margin: auto;
+    display: block;
+    opacity: 80%;
+}
+.main-current_forecast{
+    text-align: center;
+}
+.main-current_forecast p{
+    margin: 5px 0px;
+    color: #9b9a9b;
+}
+.highlight{
+    color: white;
+}
+.main-weekly-forecast{
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    height:50px;
+}
