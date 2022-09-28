@@ -2,18 +2,57 @@
   <div class="container-root">
     <img class="nasa_logo" src="assets/images/nasa_logo.svg">
     <main class="container-main">
-      <h1 class="main-title">MARS</h1>
-      <h3 class="main-subhead">FORECAST</h3>
-      <img src="assets/images/planet2.gif" class="planet_img">
-      <section class="main-current_forecast">
+      <section class="section-title">
+        <h1 class="main-title">MARS</h1>
+        <h3 class="main-subhead">FORECAST</h3>
+      </section>
+      <section class="section-image">
+        <img src="assets/images/planet2.gif" class="planet_img">
+      </section>
+      <section class="section-current_forecast">
         <p>Sol 302</p>
         <p>Elysium. Mars</p>
         <p>H : <span class="highlight"> 15&deg;F</span></p>
         <p>L : <span class="highlight"> 8&deg;F</span></p>
       </section>
-      <section class="main-weekly-forecast">
-        <button class="btn-forecast">WEEKLY FORECAST</button>
+      <section class="section-weekly_forecast-mobile">
+        <button class="btn-forecast" (click)="toggleForecast()">WEEKLY FORECAST</button>
+      </section>
+      <section class="section-weekly_forecast-desktop">
+       <div class="weekly_forecast-item">
+        <p>Sol 302</p>
+        <p>H : <span class="highlight"> 15&deg;F</span></p>
+        <p>L : <span class="highlight"> 8&deg;F</span></p>
+       </div>
       </section>
     </main>
+    <section class="weekly_forecast-list" *ngIf="forecastState">
+      <div class="weekly_forecast-list-item">
+        <p>Sol 302</p>
+        <p>H : 15&deg;F</p>
+        <p>L : 8&deg;F</p>
+       </div>
+       <div class="weekly_forecast-list-item">
+         <p>Sol 302</p>
+         <p>H : 15&deg;F</p>
+         <p>L : 8&deg;F</p>
+        </div>
+        <div class="weekly_forecast-list-item">
+          <p>Sol 302</p>
+          <p>H : 15&deg;F</p>
+          <p>L : 8&deg;F</p>
+         </div>
+         <div class="weekly_forecast-list-item">
+           <p>Sol 302</p>
+           <p>H : 15&deg;F</p>
+           <p>L : 8&deg;F</p>
+          </div>
+          <div class="weekly_forecast-list-item">
+            <p>Sol 302</p>
+            <p>H : 15&deg;F</p>
+            <p>L : 8&deg;F</p>
+           </div>
+      <button class="weekly_forecast-button" (click)="toggleForecast()"><img src="assets/images/close-icon.png"></button>
+    </section>
   </div>
 </header>

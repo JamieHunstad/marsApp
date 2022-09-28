@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'marsApp';
+
+  forecastState: boolean = false;
+
+  toggleForecast(){
+    this.forecastState = !this.forecastState;
+    console.log(this.forecastState)
+  }
+
 }

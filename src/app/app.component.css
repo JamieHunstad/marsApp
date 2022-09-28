@@ -12,38 +12,125 @@
 
 .container-main{
     margin: 20px;
-    border: solid 1px #f18155;;
+    border: solid 1px #f18155;
     border-radius: 15px;
     padding: 20px;
     height:100%;
+    display: grid;
+    grid-template-areas:
+    "a"
+    "b"
+    "c"
+    "d";
 }
-.main-title{
+.section-title{
+    grid-area: a;
     text-align: center;
+}
+.section-image{
+    grid-area: b;
+}
+.section-current_forecast{
+    grid-area: c;
+    text-align: center;
+}
+.section-weekly_forecast-mobile{
+    grid-area: d;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+.section-weekly_forecast-desktop{
+    display: none;
 }
 .main-subhead{
     letter-spacing: 0.3em;
     opacity: 60%;
-    text-align: center;
 }
 .planet_img{
     width:200px;
-    margin: auto;
-    display: block;
     opacity: 80%;
+    display: block;
+    margin: auto;
 }
-.main-current_forecast{
-    text-align: center;
-}
-.main-current_forecast p{
+.section-current_forecast p{
     margin: 5px 0px;
     color: #9b9a9b;
 }
 .highlight{
     color: white;
 }
-.main-weekly-forecast{
+
+.weekly_forecast-list{
+    position: absolute;
+    top: 50px;
+    left: 40px;
+    right: 40px;
+    border-radius: 15px;
+    opacity: 90%;
+    background-color: #e0e0e0;
+    height:505px;
     text-align: center;
-    margin-top: 40px;
-    margin-bottom: 20px;
-    height:50px;
+    overflow: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none; 
 }
+.weekly_forecast-list-item{
+    padding: 20px;
+    border-top: solid 1px black;
+    border-bottom: solid 1px black;
+    margin: 0px 20px;
+}
+.weekly_forecast-list-item p{
+    color: black;
+    font-size: 1.4em;
+}
+.weekly_forecast-button{
+    border: none;
+    background-color: #ffffff00;
+    color: #f18155;
+    padding: 10px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.weekly_forecast-button img{
+    width: 20px;
+}
+
+@media only screen and (min-width: 600px) {
+    .container-main{
+        display: grid;
+        grid-template-areas:
+        "a b"
+        "c b"
+        "d d";
+        padding: 20px 80px;
+    }
+    .section-title{
+        grid-area: a;
+        text-align: left;
+    }
+    .planet_img{
+        width: 400px;
+    }
+    .section-current_forecast{
+        text-align: left;
+    }
+    .section-weekly_forecast-mobile{
+        display: none;
+    }
+    .section-weekly_forecast-desktop{
+        display: flex;
+        display: -webkit-flex;
+        justify-content: center;
+        grid-area: d;
+    }
+    .weekly_forecast-item{
+        border-left: solid 1px white;
+        border-right: solid 1px white;
+        padding: 0px 20px;
+    }
+  }
