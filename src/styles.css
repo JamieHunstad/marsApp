@@ -29,7 +29,7 @@ h3{
 p{
     font-size: 1em;
 }
-.btn-forecast{
+.btn-primary{
     font-family: var(--mainFont);
     font-size: .8em;
     letter-spacing: 0.3em;
@@ -42,7 +42,7 @@ p{
     transition: .2s;
 }
 
-.btn-forecast:hover{
+.btn-primary:hover{
     color: #ff956b;
     font-size: .75em;
 }

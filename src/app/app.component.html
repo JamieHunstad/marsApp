@@ -3,56 +3,25 @@
     <img class="nasa_logo" src="assets/images/nasa_logo.svg">
     <main class="container-main">
       <section class="section-title">
-        <h1 class="main-title">MARS</h1>
-        <h3 class="main-subhead">FORECAST</h3>
+        <h1 class="main-title">EARTH</h1>
+        <h3 class="main-subhead">DAILY IMAGE</h3>
       </section>
       <section class="section-image">
-        <img src="assets/images/planet2.gif" class="planet_img">
+        <img src={{Image}} class="planet_img">
       </section>
-      <section class="section-current_forecast">
-        <p>Sol 302</p>
-        <p>Elysium. Mars</p>
-        <p>H : <span class="highlight"> 15&deg;F</span></p>
-        <p>L : <span class="highlight"> 8&deg;F</span></p>
+      <section class="section-description">
+        <h2>{{myDate.month}}/{{myDate.day}}/{{myDate.year}}</h2>
+        <p>Description of where this image came from</p>
       </section>
-      <section class="section-weekly_forecast-mobile">
-        <button class="btn-forecast" (click)="toggleForecast()">WEEKLY FORECAST</button>
-      </section>
-      <section class="section-weekly_forecast-desktop">
-       <div class="weekly_forecast-item">
-        <p>Sol 302</p>
-        <p>H : <span class="highlight"> 15&deg;F</span></p>
-        <p>L : <span class="highlight"> 8&deg;F</span></p>
-       </div>
+      <section class="section-change_date">
+        <button class="btn-primary" (click)="toggleDate()">CHANGE DATE</button>
       </section>
     </main>
-    <section class="weekly_forecast-list" *ngIf="forecastState">
-      <div class="weekly_forecast-list-item">
-        <p>Sol 302</p>
-        <p>H : 15&deg;F</p>
-        <p>L : 8&deg;F</p>
-       </div>
-       <div class="weekly_forecast-list-item">
-         <p>Sol 302</p>
-         <p>H : 15&deg;F</p>
-         <p>L : 8&deg;F</p>
-        </div>
-        <div class="weekly_forecast-list-item">
-          <p>Sol 302</p>
-          <p>H : 15&deg;F</p>
-          <p>L : 8&deg;F</p>
-         </div>
-         <div class="weekly_forecast-list-item">
-           <p>Sol 302</p>
-           <p>H : 15&deg;F</p>
-           <p>L : 8&deg;F</p>
-          </div>
-          <div class="weekly_forecast-list-item">
-            <p>Sol 302</p>
-            <p>H : 15&deg;F</p>
-            <p>L : 8&deg;F</p>
-           </div>
-      <button class="weekly_forecast-button" (click)="toggleForecast()"><img src="assets/images/close-icon.png"></button>
+    <section class="modal-change_date" *ngIf="toggleDateState">
+      <button class="btn-close" (click)="toggleDate()"><img src="assets/images/close-icon.png"></button>
+      <form>
+
+      </form>
     </section>
   </div>
 </header>
