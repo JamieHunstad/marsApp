@@ -13,8 +13,8 @@ export class ChangeImageService {
   toggleDateSubject = new Subject<any>();
 
   Data: any;
-  Identifier: any;
-  Image: any;
+  Identifier: string;
+  Image: string;
   toggleDateState: boolean = false;
 
   myDate: any = {

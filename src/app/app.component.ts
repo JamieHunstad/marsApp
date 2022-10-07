@@ -14,10 +14,10 @@ export class AppComponent implements OnInit, OnDestroy{
   }
   title = 'earthApp';
   toggleDateState: boolean = false;
-  private mySubscription: Subscription;
+  private toggleDateSubscription: Subscription;
 
   ngOnInit(): void {
-    this.mySubscription = this.changeImage.toggleDateSubject
+    this.toggleDateSubscription = this.changeImage.toggleDateSubject
     .subscribe(
       (mydata: any) => {
         this.toggleDateState = mydata;
@@ -26,7 +26,7 @@ export class AppComponent implements OnInit, OnDestroy{
   }
 
 ngOnDestroy(): void {
-  this.mySubscription.unsubscribe;
+  this.toggleDateSubscription.unsubscribe;
 }
 
 }

@@ -17,7 +17,7 @@ export class MainComponent implements OnInit, OnDestroy {
 
   theDate: any;
   myFullDate: string;
-  Image: any;
+  Image: string;
   toggleDateState: boolean = false;
 
   ngOnInit(): void {
@@ -39,7 +39,7 @@ export class MainComponent implements OnInit, OnDestroy {
 
       this.imageSubscription = this.changeImage.imageSubject
       .subscribe(
-        (mydata: boolean) =>{
+        (mydata: string) =>{
           this.Image = mydata;
         }
       )
