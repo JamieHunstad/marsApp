@@ -1,64 +1,7 @@
-<header>
-  <div class="container-root">
+<div class="container-root">
+  <header>
     <img class="nasa_logo" src="assets/images/nasa_logo.svg">
-    <main class="container-main">
-      <section class="section-title">
-        <h1 class="main-title">EARTH</h1>
-        <h3 class="main-subhead">DAILY IMAGE</h3>
-      </section>
-      <section class="section-image">
-        <img src={{Image}} class="planet_img">
-      </section>
-      <section class="section-description">
-        <h2>{{myDate.month}}/{{myDate.day}}/{{myDate.year}}</h2>
-        <p>Description of where this image came from</p>
-      </section>
-      <section class="section-change_date">
-        <button class="btn-primary" (click)="toggleDate()">CHANGE DATE</button>
-      </section>
-    </main>
-    <section class="modal-change_date" *ngIf="toggleDateState">
-      <button class="btn-close" (click)="toggleDate()"><img src="assets/images/close-icon.png"></button>
-      <h1>CHANGE DATE</h1>
-      <form (ngSubmit)="OnSubmit(f)" #f="ngForm">
-        <label for="month">Month</label>
-        <select
-        id="month"
-        name="month"
-        ngModel
-        >
-        <option value="01">January</option>
-        <option value="02">February</option>
-        <option value="03">March</option>
-        <option value="04">April</option>
-        <option value="05">May</option>
-        <option value="06">June</option>
-        <option value="07">July</option>
-        <option value="08">August</option>
-        <option value="09">September</option>
-        <option value="10">October</option>
-        <option value="11">November</option>
-        <option value="12">December</option>
-      </select>
-      <label for="day">Day</label>
-      <input
-        id="day"
-        name="day"
-        ngModel
-        >
-        <label for="year">Year</label>
-        <select
-          id="year"
-          name="year"
-          ngModel>
-          <option value="2018">2018</option>
-          <option value="2019">2019</option>
-          <option value="2020">2020</option>
-          <option value="2021">2021</option>
-          <option value="2022">2022</option>
-        </select>
-        <button type="submit">Submit</button>
-      </form>
-    </section>
-  </div>
-</header>
+  </header>
+  <app-main></app-main>
+  <app-modal *ngIf="toggleDateState == true"></app-modal>
+</div>

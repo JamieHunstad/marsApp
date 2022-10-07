@@ -1,0 +1,16 @@
+<main class="container-main">
+    <section class="section-title">
+      <h1 class="main-title">EARTH</h1>
+      <h3 class="main-subhead">DAILY IMAGE</h3>
+    </section>
+    <section class="section-image">
+      <img src={{Image}} class="planet_img">
+    </section>
+    <section class="section-description">
+      <h2>{{theDate.month}}/{{theDate.day}}/{{theDate.year}}</h2>
+      <p>This image was taken by NASA's EPIC camera onboard the NOAA DSCOVR spacecraft</p>
+    </section>
+    <section class="section-change_date">
+      <button class="btn-primary" (click)="onToggleDate()">CHANGE DATE</button>
+    </section>
+</main>

@@ -1,0 +1,90 @@
+/* MODAL */
+.modal-change_date{
+    position: absolute;
+    top: 49px;
+    left: 40px;
+    right: 40px;
+    border-radius: 15px;
+    opacity: 90%;
+    background-color: rgb(43, 43, 43);
+    height: 551px;
+    text-align: center;
+    overflow: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none; 
+}
+.modal-change_date-item{
+    padding: 20px;
+    border-top: solid 1px black;
+    border-bottom: solid 1px black;
+    margin: 0px 20px;
+}
+.modal-change_date-item p{
+    color: white;
+    font-size: 1.4em;
+}
+.btn-close{
+    border: none;
+    background-color: #ffffff00;
+    color: #8bc3ff;
+    padding: 10px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+.btn-close img{
+    width: 20px;
+}
+
+/* FORM */
+.form{
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    width:50%;
+    margin: auto;
+    justify-content: center;
+    color: white;
+    font-family: var(--mainFont);
+}
+.form-title{
+    margin-top: 20px;
+}
+.form-option{
+    padding: 10px 20px;
+    margin: 10px 0px;
+    background-color: rgba(0, 0, 0, 0);
+    border: solid 1px #8bc3ff;
+    color: white;
+    text-align: center;
+    font-family: var(--mainFont);
+    text-transform: uppercase;
+    font-size: 1em;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: .8s;
+}
+.form-option:hover{
+    padding: 8px 20px;
+    border: solid 1px #66b0ff;
+}
+.form-button {
+    padding: 10px 20px;
+    margin: 20px 0px;
+    color: white;
+    text-align: center;
+    font-family: var(--mainFont);
+    background-color: #8bc3ff;
+    font-size: 1em;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: .8s;
+}
+.form-button:hover {
+    padding: 8px 20px;
+    background-color: #66b0ff;
+
+}

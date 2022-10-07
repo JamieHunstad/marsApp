@@ -1,0 +1,72 @@
+/* MAIN CONTAINER - SMALL VIEW */
+.container-main{
+    margin: 20px;
+    border: solid 1px #8bc3ff;
+    border-radius: 15px;
+    padding: 20px;
+    height: 550px;
+    display: grid;
+    grid-template-areas:
+    "a"
+    "b"
+    "c"
+    "d";
+}
+
+.section-title{
+    grid-area: a;
+    text-align: center;
+}
+.section-image{
+    grid-area: b;
+}
+.section-description{
+    grid-area: c;
+    text-align: center;
+}
+.section-change_date{
+    grid-area: d;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+.main-subhead{
+    letter-spacing: 0.3em;
+    opacity: 60%;
+}
+.planet_img{
+    width:200px;
+    opacity: 80%;
+    display: block;
+    margin: auto;
+}
+.section-description p{
+    margin: 5px 0px;
+    color: #9b9a9b;
+}
+.highlight{
+    color: white;
+}
+
+/* MAIN CONTAINER - LARGE VIEW */
+@media only screen and (min-width: 600px) {
+    .container-main{
+        display: grid;
+        grid-template-areas:
+        "a b"
+        "c b"
+        "d d";
+        padding: 20px 80px;
+    }
+    .section-title{
+        grid-area: a;
+        text-align: left;
+    }
+    .planet_img{
+        width: 400px;
+    }
+    .section-description{
+        text-align: left;
+        max-width: 250px;
+    }
+  }
