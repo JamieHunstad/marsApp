@@ -7,9 +7,11 @@
         class="form-option"
         id="month"
         name="month"
-        ngModel
+        [(ngModel)]="selectedOption"
+        required
+        (change)="monthSelect()"
         >
-        <option value="" disabled selected>Month</option>
+        <option value="month" disabled selected>Month</option>
         <option value="01">January</option>
         <option value="02">February</option>
         <option value="03">March</option>
@@ -25,18 +27,24 @@
     </select>
     <label for="day"></label>
     <input
+        type="number"
         class="form-option"
         id="day"
         name="day"
         autocomplete="off"
         ngModel
+        required
+        max="{{dateRangeMax}}"
         placeholder="Day"
+        #day="ngModel"
         >
+        <p *ngIf="!day.valid && day.touched">Please enter a valid date</p>
         <label for="year"></label>
         <select
         class="form-option"
         id="year"
         name="year"
+        required
         ngModel>
         <option value="" disabled selected>Year</option>
         <option value="2018">2018</option>
@@ -45,6 +53,6 @@
         <option value="2021">2021</option>
         <option value="2022">2022</option>
         </select>
-        <button class="form-button" type="submit">Submit</button>
+        <button class="form-button" type="submit" [disabled]="!f.valid">Submit</button>
     </form>
 </section>

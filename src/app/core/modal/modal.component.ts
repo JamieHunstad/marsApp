@@ -10,6 +10,8 @@ import { ChangeImageService } from 'src/app/services/change-image.service';
 export class ModalComponent implements OnInit {
 
   constructor(private changeImage: ChangeImageService) { }
+  selectedOption: any = "month";
+  dateRangeMax: number;
 
   ngOnInit(): void {
   }
@@ -25,5 +27,19 @@ export class ModalComponent implements OnInit {
 
   onToggleDate(){
     this.changeImage.toggleDate();
+  }
+
+  monthSelect(){
+    console.log(this.selectedOption);
+    if(this.selectedOption == "04" || this.selectedOption == "06" || this.selectedOption == "09" || this.selectedOption == "11" ){
+      this.dateRangeMax = 30;
+    } else if (this.selectedOption == "01" || this.selectedOption == "03" || this.selectedOption == "05" || this.selectedOption == "07" || this.selectedOption == "08" || this.selectedOption == "10" || this.selectedOption == "12"){
+      this.dateRangeMax = 31;
+    } else if(this.selectedOption == "02"){
+      this.dateRangeMax = 28;
+    } else{
+      console.log("this shit didnt work")
+    }
+    console.log(this.dateRangeMax);
   }
 }
