@@ -5,6 +5,7 @@
     </section>
     <section class="section-image">
       <img src={{Image}} class="planet_img">
+      <p *ngIf="isFetching">Loading...</p>
     </section>
     <section class="section-description">
       <h2>{{theDate.month}}/{{theDate.day}}/{{theDate.year}}</h2>

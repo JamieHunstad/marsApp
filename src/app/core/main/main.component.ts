@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ChangeImageService } from 'src/app/services/change-image.service';
+import { NasaService } from 'src/app/services/nasa.service';
 
 @Component({
   selector: 'app-main',
@@ -9,16 +10,18 @@ import { ChangeImageService } from 'src/app/services/change-image.service';
 })
 export class MainComponent implements OnInit, OnDestroy {
 
-  constructor(private changeImage: ChangeImageService) {
+  constructor(private changeImage: ChangeImageService, private nasaService: NasaService) {
   }
   private dateData: Subscription;
   private toggleDateSubscription: Subscription;
   private imageSubscription: Subscription;
+  private fetchingSubscription: Subscription;
 
   theDate: any;
   myFullDate: string;
   Image: string;
   toggleDateState: boolean = false;
+  isFetching: boolean = true;
 
   ngOnInit(): void {
     this.changeImage.getCurrentDate();
@@ -34,6 +37,21 @@ export class MainComponent implements OnInit, OnDestroy {
       .subscribe(
         (mydata: boolean) =>{
           this.toggleDateState = mydata;
+        }
+      )
+
+
+      this.fetchingSubscription = this.nasaService.fetchingSubject
+      .subscribe(
+        (mydata: any) => {
+          this.isFetching = mydata;
+        }
+      )
+
+      this.fetchingSubscription = this.changeImage.fetchingSubject
+      .subscribe(
+        (mydata: any) => {
+          this.isFetching = mydata;
         }
       )
 

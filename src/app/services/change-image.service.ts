@@ -11,6 +11,7 @@ export class ChangeImageService {
   dateDataSubject = new Subject<any>();
   imageSubject = new Subject<any>();
   toggleDateSubject = new Subject<any>();
+  fetchingSubject = new Subject<any>();
 
   Data: any;
   Identifier: string;
@@ -39,6 +40,7 @@ getImageData(date: string){
           this.getImage(this.myDate.year, this.myDate.month, this.myDate.day, this.Identifier)
           this.imageSubject.next(this.Image);
           this.dateDataSubject.next(this.myDate);
+          this.fetchingSubject.next(false);
         }
       })
 }

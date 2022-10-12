@@ -47,6 +47,9 @@
 .highlight{
     color: white;
 }
+.section-image p{
+    text-align: center;
+}
 
 /* MAIN CONTAINER - LARGE VIEW */
 @media only screen and (min-width: 600px) {
