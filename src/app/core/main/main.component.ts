@@ -16,12 +16,14 @@ export class MainComponent implements OnInit, OnDestroy {
   private toggleDateSubscription: Subscription;
   private imageSubscription: Subscription;
   private fetchingSubscription: Subscription;
+  private imageErrorSubscription: Subscription;
 
   theDate: any;
   myFullDate: string;
   Image: string;
   toggleDateState: boolean = false;
   isFetching: boolean = true;
+  error: boolean = false;
 
   ngOnInit(): void {
     this.changeImage.getCurrentDate();
@@ -45,6 +47,13 @@ export class MainComponent implements OnInit, OnDestroy {
       .subscribe(
         (mydata: any) => {
           this.isFetching = mydata;
+        }
+      )
+
+      this.imageErrorSubscription = this.changeImage.imageErrorSubject
+      .subscribe(
+        (mydata: any) => {
+          this.error = mydata;
         }
       )
 

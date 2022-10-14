@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { NasaService } from './nasa.service';
 import { Subject } from 'rxjs';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,7 @@ export class ChangeImageService {
   imageSubject = new Subject<any>();
   toggleDateSubject = new Subject<any>();
   fetchingSubject = new Subject<any>();
+  imageErrorSubject = new Subject<any>();
 
   Data: any;
   Identifier: string;
@@ -33,14 +35,24 @@ getImageData(date: string){
   this.nasaService.getNasaData(date)
       .subscribe({
         next: (response) => {
+
           this.Data = response;
 
+          if(this.Data.length == 0){
+            this.imageErrorSubject.next(true);
+          }
+          
           this.Identifier = this.Data[0].identifier;
 
           this.getImage(this.myDate.year, this.myDate.month, this.myDate.day, this.Identifier)
           this.imageSubject.next(this.Image);
           this.dateDataSubject.next(this.myDate);
           this.fetchingSubject.next(false);
+          this.imageErrorSubject.next(false);
+        },
+        error: (theError) =>{
+          console.log("HEY!");
+          console.log(theError);
         }
       })
 }
