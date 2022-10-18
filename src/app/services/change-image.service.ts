@@ -51,7 +51,6 @@ getImageData(date: string){
           this.imageErrorSubject.next(false);
         },
         error: (theError) =>{
-          console.log("HEY!");
           console.log(theError);
         }
       })
@@ -110,7 +109,6 @@ formSubmit(day: any, month: any, year: any){
 toggleDate(){
   this.toggleDateState = !this.toggleDateState;
   this.toggleDateSubject.next(this.toggleDateState);
-  console.log(this.toggleDateState)
 }
 
 }
